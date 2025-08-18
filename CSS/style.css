@@ -1,0 +1,149 @@
+/* 像素风全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', monospace; /* 像素风字体 */
+    background: linear-gradient(135deg, #1a1a2e, #16213e); /* 深色渐变背景 */
+    color: #ffffff;
+    min-height: 100vh;
+    image-rendering: pixelated; /* 保持像素化效果 */
+}
+
+/* 页面标题样式 */
+.page-title {
+    text-align: center;
+    padding: 40px 20px;
+    font-size: 2.5rem;
+    color: #ffd700; /* 金色标题 */
+    text-shadow: 
+        2px 2px 0px #000000,
+        4px 4px 0px #333333; /* 像素风阴影 */
+    letter-spacing: 2px;
+}
+
+/* 角色卡片容器 */
+.character-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 单个角色卡片 */
+.character-card {
+    width: 280px;
+    height: 350px;
+    background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
+    border: 4px solid #444466; /* 像素风边框 */
+    border-radius: 0; /* 无圆角，保持像素风 */
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 卡片悬停效果 */
+.character-card:hover {
+    transform: translateY(-8px) scale(1.05);
+    border-color: #ffd700;
+    box-shadow: 
+        0 8px 16px rgba(255, 215, 0, 0.3),
+        inset 0 0 20px rgba(255, 215, 0, 0.1);
+}
+
+/* 角色立绘图片 */
+.character-image {
+    width: 150px;
+    height: 150px;
+    border: 3px solid #666688;
+    margin: 0 auto 15px;
+    background: #333355;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.character-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    image-rendering: pixelated; /* 保持像素化 */
+}
+
+/* 角色名称 */
+.character-name {
+    font-size: 1.4rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 0px #000000;
+    letter-spacing: 1px;
+}
+
+/* 角色信息 */
+.character-info {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #ccccdd;
+}
+
+.character-info p {
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.character-info .label {
+    color: #aaaacc;
+    font-weight: bold;
+}
+
+.character-info .value {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* 元素样式 */
+.element-pyro { color: #ff6b47; }
+.element-hydro { color: #4a90e2; }
+.element-dendro { color: #7cb342; }
+
+/* 稀有度星星 */
+.rarity {
+    color: #ffd700;
+    font-size: 1.1rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2rem;
+        padding: 20px 10px;
+    }
+    
+    .character-grid {
+        gap: 20px;
+        padding: 10px;
+    }
+    
+    .character-card {
+        width: 250px;
+        height: 320px;
+    }
+    
+    .character-image {
+        width: 120px;
+        height: 120px;
+    }
+}

@@ -1,0 +1,295 @@
+/* 详情页专用样式 */
+
+/* 导航栏样式 */
+.pixel-nav {
+    background: linear-gradient(90deg, #1a1a2e, #16213e);
+    border-bottom: 4px solid #444466;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.nav-title {
+    color: #ffd700;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.nav-links {
+    display: flex;
+    gap: 10px;
+}
+
+.nav-button {
+    background: #2a2a4a;
+    color: #ffffff;
+    border: 2px solid #444466;
+    padding: 8px 16px;
+    font-family: 'Courier New', monospace;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+    background: #3a3a5a;
+    border-color: #ffd700;
+    color: #ffd700;
+}
+
+.nav-button.active {
+    background: #ffd700;
+    color: #1a1a2e;
+    border-color: #ffd700;
+}
+
+/* 角色详情主容器 */
+.character-detail {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+}
+
+/* 角色展示区 */
+.character-showcase {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 50px;
+    background: linear-gradient(135deg, #2a2a4a, #1e1e3a);
+    border: 4px solid #444466;
+    padding: 40px;
+}
+
+.character-portrait {
+    position: relative;
+    flex-shrink: 0;
+}
+
+.character-portrait img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border: 4px solid #666688;
+    image-rendering: pixelated;
+}
+
+.portrait-border {
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    border: 2px solid #ffd700;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.character-header {
+    flex: 1;
+}
+
+.character-title {
+    font-size: 3.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 0px #000000;
+    letter-spacing: 2px;
+}
+
+.character-subtitle {
+    font-size: 1.3rem;
+    color: #ccccdd;
+    margin-bottom: 20px;
+    font-style: italic;
+}
+
+.rarity-stars {
+    font-size: 2rem;
+    color: #ffd700;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+/* 信息面板区 */
+.info-panels {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+}
+
+.info-panel {
+    background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
+    border: 3px solid #444466;
+    padding: 30px;
+}
+
+.panel-title {
+    font-size: 1.8rem;
+    color: #ffd700;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 0px #000000;
+    border-bottom: 2px solid #444466;
+    padding-bottom: 10px;
+}
+
+/* 基础信息网格 */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background: #333355;
+    border: 1px solid #444466;
+}
+
+.info-label {
+    color: #aaaacc;
+    font-weight: bold;
+}
+
+.info-value {
+    color: #ffffff;
+    font-weight: normal;
+}
+
+/* 角色描述 */
+.character-description p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #ccccdd;
+    font-size: 1.1rem;
+}
+
+/* 技能预览 */
+.skills-preview {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: #333355;
+    border: 2px solid #444466;
+    transition: border-color 0.2s ease;
+}
+
+.skill-item:hover {
+    border-color: #ffd700;
+}
+
+.skill-icon {
+    font-size: 2rem;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #444466;
+    border: 2px solid #666688;
+}
+
+.skill-info h4 {
+    color: #ffd700;
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.skill-info p {
+    color: #ccccdd;
+    margin: 0;
+}
+
+/* 底部导航 */
+.character-footer {
+    margin-top: 50px;
+    padding: 30px 0;
+    border-top: 4px solid #444466;
+}
+
+.footer-nav {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+.footer-button {
+    background: #2a2a4a;
+    color: #ffffff;
+    border: 3px solid #444466;
+    padding: 15px 25px;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    min-width: 120px;
+}
+
+.footer-button:hover {
+    background: #3a3a5a;
+    border-color: #ffd700;
+    color: #ffd700;
+    transform: translateY(-2px);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .character-showcase {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 20px;
+    }
+    
+    .character-portrait img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .character-title {
+        font-size: 2.5rem;
+    }
+    
+    .info-panels {
+        grid-template-columns: 1fr;
+    }
+    
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .footer-nav {
+        flex-direction: column;
+        align-items: center;
+    }
+}
