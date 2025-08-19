@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>角色需求反馈 - 原神角色介绍</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/detail.css">
+    <link rel="stylesheet" href="CSS/form.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="pixel-nav">
+        <div class="nav-container">
+            <button class="nav-button" onclick="window.location.href='index.html'">
+                ← 返回首页
+            </button>
+            <div class="nav-title">角色需求反馈</div>
+            <div class="nav-links">
+                <button class="nav-button" onclick="window.location.href='mavuika.html'">玛薇卡</button>
+                <button class="nav-button" onclick="window.location.href='furina.html'">芙宁娜</button>
+                <button class="nav-button" onclick="window.location.href='nahida.html'">纳西妲</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 主要内容区 -->
+    <main class="character-detail">
+        <div class="form-container">
+            <h1 class="form-title">角色需求反馈</h1>
+            <p class="form-subtitle">告诉我你想了解哪个原神角色，我会考虑在网站中添加！</p>
+            
+            <form id="feedbackForm">
+                <!-- 角色名字 -->
+                <div class="form-group">
+                    <label for="characterName" class="form-label">
+                        想了解的角色名字 <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="text" 
+                        id="characterName" 
+                        name="characterName" 
+                        class="form-input" 
+                        placeholder="例如：雷电将军、钟离、甘雨..."
+                        required
+                    >
+                </div>
+
+                <!-- 希望了解的信息 -->
+                <div class="form-group">
+                    <label for="description" class="form-label">
+                        希望了解哪些信息 <span class="required">*</span>
+                    </label>
+                    <textarea 
+                        id="description" 
+                        name="description" 
+                        class="form-textarea" 
+                        placeholder="请描述你想了解这个角色的哪些方面，比如：技能介绍、背景故事、配队建议、圣遗物推荐等..."
+                        required
+                    ></textarea>
+                </div>
+
+                <!-- 用户邮箱 -->
+                <div class="form-group">
+                    <label for="email" class="form-label">
+                        你的邮箱 <span class="required">*</span>
+                    </label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        class="form-input" 
+                        placeholder="your-email@example.com"
+                        required
+                    >
+                </div>
+
+                <!-- 提交按钮 -->
+                <button type="submit" class="form-button" id="submitBtn">
+                    🚀 提交反馈
+                </button>
+            </form>
+
+            <!-- 加载提示 -->
+            <div class="loading-text" id="loadingText">
+                正在提交你的反馈...
+            </div>
+
+            <!-- 成功消息 -->
+            <div class="success-message" id="successMessage">
+                <h3>🎉 提交成功！</h3>
+                <p>感谢你的反馈！我会认真考虑添加这个角色的介绍。</p>
+                <button onclick="window.location.href='index.html'" style="margin-top: 15px; padding: 10px 20px; background: #ffffff; color: #4caf50; border: 2px solid #ffffff; cursor: pointer;">
+                    返回首页
+                </button>
+            </div>
+
+            <!-- 错误消息 -->
+            <div class="error-message" id="errorMessage">
+                <h3>❌ 提交失败</h3>
+                <p>抱歉，提交过程中出现了错误。请稍后再试。</p>
+                <button onclick="location.reload()" style="margin-top: 15px; padding: 10px 20px; background: #ffffff; color: #f44336; border: 2px solid #ffffff; cursor: pointer;">
+                    重试
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // 表单提交处理
+        document.getElementById('feedbackForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // 获取表单数据
+            const formData = {
+                characterName: document.getElementById('characterName').value,
+                description: document.getElementById('description').value,
+                email: document.getElementById('email').value
+            };
+            
+            // 显示加载状态
+            document.getElementById('submitBtn').disabled = true;
+            document.getElementById('submitBtn').textContent = '提交中...';
+            document.getElementById('loadingText').style.display = 'block';
+            
+            try {
+                // 发送到Google Apps Script
+                const response = await fetch('https://script.google.com/macros/s/AKfycbx7NIBxbWLqKgG0RfN1i2PdlaVRrbtfz_iZvE0jBmyACNBk0mVPVLRtN2eal4VQdgb9/exec', {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData)
+                });
+                
+                // 显示成功消息
+                document.getElementById('loadingText').style.display = 'none';
+                document.getElementById('feedbackForm').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                
+            } catch (error) {
+                console.error('提交错误:', error);
+                
+                // 显示错误消息
+                document.getElementById('loadingText').style.display = 'none';
+                document.getElementById('submitBtn').disabled = false;
+                document.getElementById('submitBtn').textContent = '🚀 提交反馈';
+                document.getElementById('errorMessage').style.display = 'block';
+            }
+        });
+    </script>
+</body>
+</html>

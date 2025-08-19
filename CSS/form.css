@@ -1,0 +1,220 @@
+/* 表单和反馈功能专用样式 */
+
+/* 表单容器样式 */
+.form-container {
+    max-width: 600px;
+    margin: 40px auto;
+    background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
+    border: 4px solid #444466;
+    padding: 40px;
+}
+
+.form-title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #ffd700;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 0px #000000;
+}
+
+.form-subtitle {
+    text-align: center;
+    color: #ccccdd;
+    margin-bottom: 30px;
+    font-size: 1.1rem;
+}
+
+/* 表单字段样式 */
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-label {
+    display: block;
+    color: #ffd700;
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+    text-shadow: 1px 1px 0px #000000;
+}
+
+.form-input, .form-textarea {
+    width: 100%;
+    padding: 12px;
+    background: #333355;
+    border: 3px solid #444466;
+    color: #ffffff;
+    font-family: 'Courier New', monospace;
+    font-size: 1rem;
+}
+
+.form-input:focus, .form-textarea:focus {
+    outline: none;
+    border-color: #ffd700;
+    box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);
+}
+
+.form-textarea {
+    height: 120px;
+    resize: vertical;
+}
+
+/* 表单按钮样式 */
+.form-button {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(145deg, #ffd700, #ffed4e);
+    color: #1a1a2e;
+    border: 3px solid #ffd700;
+    font-family: 'Courier New', monospace;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.form-button:hover {
+    background: linear-gradient(145deg, #ffed4e, #ffd700);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.4);
+}
+
+.form-button:disabled {
+    background: #666666;
+    color: #999999;
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+}
+
+/* 状态提示样式 */
+.loading-text {
+    text-align: center;
+    color: #ffd700;
+    margin-top: 20px;
+    display: none;
+}
+
+.success-message {
+    background: linear-gradient(145deg, #4caf50, #45a049);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid #4caf50;
+    margin-top: 20px;
+    display: none;
+}
+
+.error-message {
+    background: linear-gradient(145deg, #f44336, #da190b);
+    color: white;
+    padding: 20px;
+    text-align: center;
+    border: 3px solid #f44336;
+    margin-top: 20px;
+    display: none;
+}
+
+.required {
+    color: #ff6b47;
+}
+
+/* 首页反馈区域样式 */
+.feedback-section {
+    max-width: 800px;
+    margin: 60px auto 40px;
+    padding: 0 20px;
+}
+
+.feedback-container {
+    background: linear-gradient(145deg, #2a2a4a, #1e1e3a);
+    border: 4px solid #444466;
+    padding: 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.feedback-container::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, #ffd700, #ffed4e, #ffd700);
+    z-index: -1;
+    opacity: 0.3;
+}
+
+.feedback-title {
+    font-size: 2.2rem;
+    color: #ffd700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 0px #000000;
+    letter-spacing: 1px;
+}
+
+.feedback-subtitle {
+    font-size: 1.2rem;
+    color: #ccccdd;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.feedback-button {
+    background: linear-gradient(145deg, #ffd700, #ffed4e);
+    color: #1a1a2e;
+    border: 3px solid #ffd700;
+    padding: 15px 30px;
+    font-family: 'Courier New', monospace;
+    font-size: 1.3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: none;
+}
+
+.feedback-button:hover {
+    background: linear-gradient(145deg, #ffed4e, #ffd700);
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 
+        0 8px 16px rgba(255, 215, 0, 0.4),
+        0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .form-container {
+        padding: 25px;
+        margin: 20px auto;
+    }
+
+    .form-title {
+        font-size: 2rem;
+    }
+
+    .form-subtitle {
+        font-size: 1rem;
+    }
+
+    .feedback-section {
+        margin: 40px auto 20px;
+    }
+
+    .feedback-container {
+        padding: 25px;
+    }
+
+    .feedback-title {
+        font-size: 1.8rem;
+    }
+
+    .feedback-subtitle {
+        font-size: 1rem;
+    }
+
+    .feedback-button {
+        font-size: 1.1rem;
+        padding: 12px 25px;
+    }
+}
